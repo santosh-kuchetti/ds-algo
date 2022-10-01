@@ -57,3 +57,31 @@ var singleNumber2 = function (nums) {
     return Object.keys(have)[0]
 }(nums);
 console.log(singleNumber2)  // we get 1 here
+
+//3
+// bit maipulation
+/*
+    we canmake use of XOR operator here. By doing this we can get the optimal solution than befor approch
+    0 ^ 0 = 0
+    0 ^ 1 = 1
+    1 ^ 1 = 0
+    1 ^ 0 = 1
+
+    anything XOR with 0 gives itself
+    anythinf XOR with itself gives 0
+
+    means what i wann say is we have an array [2,2,1]
+    2 ^ 2 ^ 1;
+    means,
+    2 ^ 2 = 0 and
+    0 ^ 1 = 1
+*/
+
+var singleNumber3 = function (nums) {
+    let result = 0
+    for (let i of nums) {
+        result ^= i;
+    }
+    return result
+}(nums);
+console.log(singleNumber3) // we get 1 here
