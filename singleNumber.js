@@ -8,13 +8,17 @@
     Output: 1
 
 */
+
+let nums = [2, 2, 1];
+
+// 1
+
 /*
     the main idea behaind this is they are asking to find the unique number in the array.
     we have a map functionality which will be usefull here in this case.
     we can store the elements in the map with the count of its occurences like key as elements of array and values as count of its occurennces.
     after that we can run a loop and find which key has the count as 1 and we will return it.
 */
-let nums = [2, 2, 1];
 
 var singleNumber = function (nums) {
     let map = new Map();
@@ -32,3 +36,24 @@ var singleNumber = function (nums) {
     }
 }(nums);
 console.log(singleNumber) // we can get 1 here.
+
+// 2
+
+/*
+    for eleminating using two loops, we can use an object.
+    we can set elment as key and count as value
+    we can do like when we already have the key in the object, we simply delete it. 
+    when we don't have the element as key in the object, we can add it as a key and set ots value to 1.
+    finally we can have a object with only one key because we are deleting all the keys which are repeating again.
+    we can access them by 'Object.keys(object)' which gives us the array of keys of object and our value is in 1st index,
+    so 'Object.keys(object)[0]' gives us the the which key i,e oue element having the unique occurence.
+*/
+
+var singleNumber2 = function (nums) {
+    let have = {};
+    for (let i of nums) {
+        have[i] ? delete have[i] : have[i] = 1;
+    }
+    return Object.keys(have)[0]
+}(nums);
+console.log(singleNumber2)  // we get 1 here
