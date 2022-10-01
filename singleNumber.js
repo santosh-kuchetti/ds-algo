@@ -80,7 +80,7 @@ console.log(singleNumber2)  // we get 1 here
 var singleNumber3 = function (nums) {
     let result = 0
     for (let i of nums) {
-        result ^= i;
+        result ^= i;      //this means result = result ^ i
     }
     return result
 }(nums);
