@@ -176,4 +176,4 @@ var twoNumbers = function (arr) {
         }
     }
     console.log(num1, num2)
-}(arr);
+}(arr); // we will get 3, 5 here.
