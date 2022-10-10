@@ -12,6 +12,7 @@
 */
 
 /*
+    Fast and Slow pointer Approch.
     we can achieve it by using slowand fast pointer approch.
     the main concept of this process is twopointers moves from the same stating point. but one moves slow and another moves faster.
     if any cycle is present, both pointer should meet at one place for sure, because they are moving different speeds.
