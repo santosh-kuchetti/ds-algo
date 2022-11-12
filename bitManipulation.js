@@ -173,7 +173,7 @@ var twoNumbers = function (arr) {
             num1 ^= arr[i]
         } else {
             num2 ^= arr[i]
-        }
+        }7
     }
     console.log(num1, num2)
 }(arr); // we will get 3, 5 here.
