@@ -89,5 +89,8 @@ console.log(longestConsecutive2)
 
     so the starting numbers are 1, 100, 200. beacuse there is no previous element to these in this array.
 
-    if we know the starting element, we can we can check up on up to where its consequitive sequence go
+    if we know the starting element, we can we can check up on up to where its consequitive sequence go,
+    
+
+    in the same way we will maintain max variable, if the length is greater than max, then the max will be the length,
 */
