@@ -3,7 +3,6 @@
 //     Which should add the numbers and return the result in the form of string.
 // */
 
-
 //     var a = '1';
 //     var b = '2';
 
@@ -23,8 +22,6 @@
 
 //     console.log(typeof (required), required);
 
-
-
 // // even though our approch is right there are somethings to know in this sum.
 
 // /*
@@ -33,13 +30,12 @@
 //     the result will be 1e+51 but it is in a string format.
 
 //      but what even 1e+51,
-     
+
 //      1 indicates 1*
 //      e here indicates power of 10.
 //      + indicates the next value is the power
 
 //      finally its (1* 10^51)
-
 
 // */
 
@@ -54,7 +50,7 @@
 //     There is some thing in javascript need to aware of.
 //     There is a limit in terms of number that javascript can show in number format.
 //     Beyond that number it is difficult to show in number format but it shows the number in the form for example (1e+51).
-    
+
 //     The maximum safe number we can show up is (Number.MAX_SAFE_INTEGER)
 // */
 
@@ -67,34 +63,31 @@
 
 // console.log(BigInt('9999999999999999999999999999999') + BigInt('1'))  // this will give 10000000000000000000000000000000n. where n at last represent it is a number.
 
+const a = "123";
+const b = "9";
 
-const a = '123'
-const b = '9'
-
-const required = function required(a, b) {
-    let alength = a.length;
-    let blength = b.length;
-    let string = '';
-    let extra = 0;
-    let maxLength = alength > blength ? alength : blength;
-    for (let i = 1; i <= maxLength; i++){
-        let n1 = +a.charAt(alength - i);        
-        let n2 = +b.charAt(blength - i);
-        let sum = n1 + n2 + extra;
-        extra = sum / 10 | 0;
-        sum = sum % 10;
-        if (i === maxLength && extra) {
-            string = extra*10 +  sum + string
-        } else {
-            string = sum  + string
-        }
-
+const required = (function required(a, b) {
+  let alength = a.length;
+  let blength = b.length;
+  let string = "";
+  let extra = 0;
+  let maxLength = alength > blength ? alength : blength;
+  for (let i = 1; i <= maxLength; i++) {
+    let n1 = +a.charAt(alength - i);
+    let n2 = +b.charAt(blength - i);
+    let sum = n1 + n2 + extra;
+    extra = (sum / 10) | 0;
+    sum = sum % 10;
+    if (i === maxLength && extra) {
+      string = extra * 10 + sum + string;
+    } else {
+      string = sum + string;
     }
-    return string
-    
-}(a,b)
+  }
+  return string;
+})(a, b);
 
-console.log(required, typeof (required))   // it will be 132 and it is a string
+console.log(required, typeof required); // it will be 132 and it is a string
 
 /*
     we are putting  + before because 
